@@ -1,19 +1,19 @@
-﻿; #NoEnv
-; ; AHK 1.1+
-; Arabic := 0x01
-; Return
+#NoEnv
+; AHK 1.1+
+Arabic := 0x01
+Return
 
 
-; CheckKeyboardLayout(PrimaryLanguageID) {
-;    If !(HWND := WinExist("A"))
-;       Return False
-;    If !(ThreadID := DllCall("User32.dll\GetWindowThreadProcessId", "UInt", HWND, "UInt", 0, "UInt"))
-;       Return False
-; 	   HKL := DllCall("User32.dll\GetKeyboardLayout", "UInt", ThreadID, "UInt")
-;    If ((HKL & 0xFF) = PrimaryLanguageID)
-;       Return True
-;    Return False
-; }
+CheckKeyboardLayout(PrimaryLanguageID) {
+   If !(HWND := WinExist("A"))
+      Return False
+   If !(ThreadID := DllCall("User32.dll\GetWindowThreadProcessId", "UInt", HWND, "UInt", 0, "UInt"))
+      Return False
+	   HKL := DllCall("User32.dll\GetKeyboardLayout", "UInt", ThreadID, "UInt")
+   If ((HKL & 0xFF) = PrimaryLanguageID)
+      Return True
+   Return False
+}
 
 
 HasVal(haystack, needle) {
@@ -67,12 +67,19 @@ GetConnectedString(string) {
 }
 
 
-; #If CheckKeyboardLayout(Arabic) ; the following remappings will be used only if the condition resolves to true
+#If CheckKeyboardLayout(Arabic) ; the following remappings will be used only if the condition resolves to true
 
-; 	Left::Right
-; 	Right::Left
+	Left::Right
+	Right::Left
 
-; #If                             ; end of conditional hotkeys
+	^Enter::
+		Input, OutputVar, L35, {Enter}
+
+		Clipboard := GetConnectedString(OutputVar)
+
+		Send ^v
+	Return
+#If                             ; end of conditional hotkeys
 
 +Enter::	
 	title := "اكتب بالعربي"
