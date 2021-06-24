@@ -73,10 +73,9 @@ GetConnectedString(string) {
 	Right::Left
 
 	^Enter::
-		Input, OutputVar, L35, {Enter}
-
-		Clipboard := GetConnectedString(OutputVar)
-
+		Send ^a
+		Send ^x
+		Clipboard := GetConnectedString(Clipboard)
 		Send ^v
 	Return
 #If                             ; end of conditional hotkeys
