@@ -25,6 +25,6 @@ hint: Before pressing Shift+Enter, select the textarea inside the *environment t
 hint: This way removes the current text and paste the new text from clipboard really fast. If this proccess fails somehow, just paste the text from the clipboard you self by doing **Ctrl+V** inside the *environment that does not support Arabic-.
 
 
-# Build with
+# Built with
 
 - [AutoHotKey](https://github.com/AutoHotkey/AutoHotkey)
