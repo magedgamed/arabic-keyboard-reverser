@@ -2,8 +2,6 @@
 
 This is a simple helper software that helps people to type proper arabic language in *environments that does not support arabic*.
 
-build on AutoHotKey
-
 # How To Use ?
 you have 2 ways to use it 
 
