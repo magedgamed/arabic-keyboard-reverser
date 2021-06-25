@@ -2,6 +2,16 @@
 
 This is a simple helper software that helps people to type proper Arabic language in *environments that does not support Arabic*.
 
+
+# How to install ?
+
+- Go to [releases page](https://github.com/magedgamed/arabic-keyboard-reverser/releases).
+- Download lateset release.
+- Run the downloaded exe file as administrator.
+
+why as an administrator ? because most of the games and software run on the admin level.
+
+
 # How To Use ?
 There are 2 ways to use it. 
 
